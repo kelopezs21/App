@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+  <ion-button fill="clear" class="ion-margin" (click)="modalCtrl.dismiss()">
+    <ion-icon name="arrow-back" slot="icon-only" color="white"></ion-icon>
+  </ion-button>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-list lines="none">
+    <ion-list-header class="ion-margin">
+      <ion-label>Código de verificación</ion-label>
+    </ion-list-header>
+
+    <ion-item class="ion-margin" lines="none">
+      <ion-label>
+        Introduzca el código de verificación
+        <ion-row class="ion-padding-top ion-text-center">
+          <ion-col>
+            <ion-input
+
+              required
+              maxlength="1"
+              #otp1
+              type="tel"
+              inputmode="numeric"
+              [(ngModel)]="otpString[0]"
+              (keyup)="otp($event, null, otp2, 0)"> <!-- Cambiado '' a null -->
+            </ion-input>
+
+            <ion-input
+              class="marginLeft"
+              required
+              maxlength="1"
+              #otp2
+              type="tel"
+              inputmode="numeric"
+              [(ngModel)]="otpString[1]"
+              (keyup)="otp($event, otp1, otp3, 1)">
+            </ion-input>
+
+            <ion-input
+              class="marginLeft"
+              required
+              maxlength="1"
+              #otp3
+              type="tel"
+              inputmode="numeric"
+              [(ngModel)]="otpString[2]"
+              (keyup)="otp($event, otp2, otp4, 2)">
+            </ion-input>
+
+            <ion-input
+              class="marginLeft"
+              required
+              maxlength="1"
+              #otp4
+              type="tel"
+              inputmode="numeric"
+              [(ngModel)]="otpString[3]"
+              (keyup)="otp($event, otp3, null, 3)"> <!-- Cambiado '' a null -->
+            </ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-footer>
