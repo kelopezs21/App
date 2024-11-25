@@ -52,6 +52,21 @@
 
           <div class="ion-margin-vertical">
             <ion-item>
+              <ion-input
+                formControlName="birthdate"
+                type="date">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('birthdate')?.valid && form.get('birthdate')?.touched">
+              <ion-text class="error" *ngIf="form.get('birthdate')?.hasError('required')" color="danger">
+                * Por favor, introduzca su fecha de nacimiento
+              </ion-text>
+            </ion-text>
+          </div>
+
+
+          <div class="ion-margin-vertical">
+            <ion-item>
               <ion-button
                 *ngIf="!verified"
                 slot="end"

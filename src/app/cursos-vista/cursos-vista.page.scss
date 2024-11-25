@@ -1,0 +1,94 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  text-align: center; /* Centra el texto dentro de los chips */
+}
+
+.recommended {
+  padding: 16px;
+
+  h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+ion-card {
+  margin: 0;
+  text-align: center;
+background-color: rgba(0, 0, 0, 0.993);
+  ion-img {
+    height: 150px;
+    object-fit: cover;
+  }
+
+  ion-chip {
+    margin-bottom: 8px;
+
+  }
+
+  h3 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+
+
+ion-content {
+  --background: url('../../assets/imgs/fondo-cursos.jpg') no-repeat center center/cover;
+
+
+}
+
+
+ion-searchbar {
+  --background: #e4e2dd9e; /* Fondo translúcido */
+  --placeholder-color: rgb(0, 0, 0); /* Placeholder con un tono gris */
+  --color: #000000; /* Color del texto */
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.785); /* Sombra alrededor */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+
+ion-chip[color="primary"] ion-label {
+  color: rgba(255, 255, 255, 0.871); /* Asegura que el texto en el ion-label sea blanco */
+}
+
+.categories ion-button {
+  --background: #004aad;
+  --color: white;
+  --border-radius: 0px; /* Cambia 20px por el valor que prefieras */
+}
+
+.categories ion-button {
+  --background: #004aad;
+  --color: white;
+  --border-radius: 0px; /* Bordes redondeados */
+  flex: 1 1 30%; /* Los botones ocuparán aproximadamente el 30% de la fila */
+}
+
+
+.categories ion-button:nth-child(4),
+.categories ion-button:nth-child(5) {
+  flex: 1 1 45%; /* Los botones de la fila inferior ocuparán aproximadamente el 45% */
+}
+
+/* global.scss */
+
+/* Aplica la fuente a todo el contenido */
+*{
+  font-family:  'Ubuntu' /* Puedes elegir una de las dos fuentes */
+}

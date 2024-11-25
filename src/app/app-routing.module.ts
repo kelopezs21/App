@@ -12,6 +12,22 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'cursos-vista',
+    loadChildren: () => import('./cursos-vista/cursos-vista.module').then( m => m.CursosVistaPageModule)
+  },
+  {
+    path: 'planes-suscripcion',
+    loadChildren: () => import('./planes-suscripcion/planes-suscripcion.module').then( m => m.PlanesSuscripcionPageModule)
+  },
+  {
+    path: 'detalle-plan',
+    loadChildren: () => import('./detalle-plan/detalle-plan.module').then( m => m.DetallePlanPageModule)
+  },
+  {
+    path: 'pago',
+    loadChildren: () => import('./pago/pago.module').then( m => m.PagoPageModule)
+  },
 ];
 
 @NgModule({

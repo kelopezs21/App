@@ -1,0 +1,109 @@
+/* Títulos de las columnas */
+.column-header h4, .column-plan h4 {
+  text-align: center;
+  font-size:1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+}
+
+/* Beneficios alineados al centro */
+.column-plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Para alinear al inicio de la columna */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center;
+
+
+}
+
+/* Ajustar la posición de los ion-icon */
+.column-plan ion-icon {
+  margin-right: 10px; /* Ajusta el valor según lo necesario */
+
+}
+
+.column-header ion-item{
+  display: flex;
+  font-size:0.8rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: -10px;
+  margin-right: -20px;
+  text-align: center;
+
+}
+
+/* Bordes para la tabla */
+ion-grid {
+
+  border-radius: 8px;
+  padding: 10px;
+
+}
+
+/* Margen para el botón */
+ion-button {
+  margin-top: 20px;
+
+}
+
+ion-content {
+  --background: url('../../assets/imgs/fondo-planes-suscripcion.jpg') no-repeat center center/cover;
+
+
+}
+
+
+.transparent-card-b {
+  background: transparent !important; /* Forzar fondo transparente */
+  --ion-background-color: transparent; /* Propiedad de fondo específica de Ionic */
+  box-shadow: none; /* Elimina sombras */
+}
+
+ion-item {
+  --background: transparent !important; /* Fondo transparente para ion-item */
+  --ion-background-color: transparent !important; /* Fondo transparente específico de Ionic */
+}
+
+.column-header, .column-plan {
+  --ion-background-color: transparent !important; /* Fondo transparente en columnas */
+  background: transparent !important; /* Fondo transparente en columnas */
+  color: white !important; /* Asegúrate de que el texto sea visible */
+}
+
+ion-label {
+  color: white !important; /* Color de texto claro */
+}
+
+.transparent-card {
+  background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  color: white; /* Color de texto claro para contraste */
+}
+
+.transparent-card ion-card-title {
+  color: rgb(255, 255, 255); /* Asegúrate de que el título sea visible */
+}
+
+.transparent-card ion-card-content p {
+  color: rgb(205, 13, 13); /* Texto visible en el contenido */
+  font-weight: bold;
+}
+
+.transparent-card ion-button {
+  --background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente para el botón */
+  --color: white; /* Color de texto claro para el botón */
+}
+
+.desc {
+  font-size: 1.2rem; /* Tamaño de la letra más grande */
+  color: white; /* Color blanco */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Opcional: Centra el texto */
+  margin-bottom: 1rem; /* Opcional: Espaciado inferior */
+}
+

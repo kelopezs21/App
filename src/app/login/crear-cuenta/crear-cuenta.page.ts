@@ -25,6 +25,9 @@ export class CrearCuentaPage implements OnInit {
       name: new FormControl(null, {
         validators: [Validators.required]
       }),
+      birthdate: new FormControl(null, {
+        validators: [Validators.required]
+      }),
       phone: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(9), Validators.maxLength(9)]
       }),
@@ -67,7 +70,7 @@ export class CrearCuentaPage implements OnInit {
       }
     } else {
       const toast = await this.toastCtrl.create({
-        message: 'Please enter proper Phone Number',
+        message: 'Por favor, introduzca el número de teléfono',
         duration: 5000,
         color: "danger"
       });
@@ -85,5 +88,6 @@ export class CrearCuentaPage implements OnInit {
       }
     }
   }
+
 
 }
