@@ -1,0 +1,72 @@
+.configuracion-content {
+    --background: #f3f4f6; /* Fondo claro neutro */
+
+    .config-section {
+      padding: 16px;
+
+      ion-card {
+        margin-bottom: 16px;
+        background: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+
+        ion-card-title {
+          font-size: 18px;
+          font-weight: bold;
+          color: #4f46e5; /* Púrpura oscuro */
+        }
+
+        ion-card-subtitle {
+          font-size: 14px;
+          color: #6b7280; /* Gris medio */
+        }
+
+        .subscription-btn {
+          margin: 12px 0;
+          background-color: #3b82f6; /* Azul eléctrico */
+          color: white;
+          border-radius: 8px;
+          font-weight: bold;
+        }
+
+        .support-text {
+          font-size: 14px;
+          color: #6b7280;
+
+          a {
+            color: #4f46e5; /* Púrpura oscuro */
+            text-decoration: none;
+          }
+        }
+
+        .clear-cache-btn {
+          margin: 12px 0;
+          background-color: #fbbf24; /* Amarillo dorado */
+          color: white;
+          border-radius: 8px;
+          font-weight: bold;
+        }
+
+        .info-text {
+          font-size: 14px;
+          color: #6b7280;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    ion-item {
+      --background: transparent;
+      --border-color: #d1d5db;
+
+      ion-label {
+        font-size: 16px;
+        color: #374151; /* Gris carbón */
+      }
+
+      ion-note {
+        font-size: 14px;
+        color: #4b5563; /* Gris medio */
+      }
+    }
+  }

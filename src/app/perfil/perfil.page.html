@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="perfil-page">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Encabezado del perfil -->
+  <div class="perfil-header">
+    <ion-label class="perfil-title">Perfil</ion-label>
+    <ion-icon name="settings-outline" class="perfil-icon"></ion-icon>
+  </div>
+
+  <!-- Información del perfil -->
+  <div class="perfil-info">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/6334/6334914.png"
+      alt="Foto de Perfil"
+      class="perfil-image"
+    />
+    <div class="perfil-details">
+      <h2>Kevin Roberto Varillas Guerrero</h2>
+      <p>kevinvarillas • 🇵🇪 Perú</p>
+    </div>
+  </div>
+
+  <!-- Sección: Posición semanal -->
+  <div class="section">
+    <h3>Tu posición semanal</h3>
+    <p>Del 14 al 20 de octubre</p>
+    <ion-button expand="block" class="primary-button">Ir a inicio</ion-button>
+  </div>
+
+  <!-- Sección: Aporte -->
+  <div class="section">
+    <p>
+      Mira una clase o comparte un aporte para unirte al ranking de esta
+      semana.
+    </p>
+  </div>
+
+  <!-- Sección: Certificados -->
+  <div class="section">
+    <h3>Certificados obtenidos</h3>
+    <ion-card>
+      <ion-card-content>
+        Adquiere una suscripción para certificar tu conocimiento.
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" class="secondary-button">
+      Suscribirme a Expert
+    </ion-button>
+  </div>
+
+  <!-- Footer con los íconos -->
+  <ion-footer class="footer-menu">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-footer>
+</ion-content>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { CartService } from '../../services/cart.service'; // Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-detalle-plan',
@@ -9,7 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetallePlanPage implements OnInit {
   plan: string = ''; // Plan actual seleccionado ('basic' o 'expert')
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private toastController: ToastController,
+    private cartService: CartService // Inyectamos el servicio
+  ) {}
 
   ngOnInit() {
     // Obtener parámetros de la URL
@@ -18,27 +24,19 @@ export class DetallePlanPage implements OnInit {
     });
   }
 
-  /**
-   * Obtener el precio del plan
-   * @param plan Nombre del plan
-   * @returns Precio del plan por persona
-   */
+  // Obtener precio del plan
   getPrice(plan: string): number {
     if (plan === 'basic') {
-      return 34.0; // Precio del plan básico
+      return 34.0; // Precio plan básico
     } else if (plan === 'expert') {
       const precioOriginal = 200.0;
-      const precioConDescuento = precioOriginal * 0.9; // Aplicar un 10% de descuento al plan Expert
+      const precioConDescuento = precioOriginal * 0.9; // 10% de descuento para el plan Expert
       return precioConDescuento;
     }
     return 0;
   }
 
-  /**
-   * Obtener el título del plan dinámicamente (Básico o Experto)
-   * @param plan Nombre del plan
-   * @returns Título del plan
-   */
+  // Obtener título del plan
   getPlanTitle(plan: string): string {
     if (plan === 'basic') {
       return 'Básico';
@@ -48,15 +46,26 @@ export class DetallePlanPage implements OnInit {
     return '';
   }
 
-
-  goToPayment(): void {
+  // Agregar al carrito
+  async addToCart(): Promise<void> {
+    const planTitle = this.getPlanTitle(this.plan);
     const precioTotal = this.getPrice(this.plan);
-    console.log(`Navegando al pago. Plan: ${this.plan}, Precio: S/. ${precioTotal}`);
-    this.router.navigate(['/pago'], {
-      queryParams: {
-        plan: this.plan,
-        precioTotal: precioTotal.toFixed(2),
-      },
+
+    const item = {
+      name: planTitle,
+      description: planTitle === 'Básico' ? 'Acceso limitado' : 'Acceso ilimitado',
+      price: precioTotal,
+    };
+
+    // Añadir al carrito usando el servicio
+    this.cartService.addToCart(item);
+
+    // Mostrar mensaje de éxito
+    const toast = await this.toastController.create({
+      message: `El plan ${planTitle} fue agregado al carrito.`,
+      duration: 2000,
+      color: 'success',
     });
+    await toast.present();
   }
 }

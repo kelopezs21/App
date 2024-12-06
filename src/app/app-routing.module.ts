@@ -24,10 +24,32 @@ const routes: Routes = [
     path: 'detalle-plan',
     loadChildren: () => import('./detalle-plan/detalle-plan.module').then( m => m.DetallePlanPageModule)
   },
+  //{
+    //path: 'pago',
+    //loadChildren: () => import('./pago/pago.module').then( m => m.PagoPageModule)
+  //}
+
   {
-    path: 'pago',
-    loadChildren: () => import('./pago/pago.module').then( m => m.PagoPageModule)
+    path: 'carrito-compras',
+    loadChildren: () => import('./carrito-compras/carrito-compras.module').then( m => m.CarritoComprasPageModule)
   },
+  {
+    path: 'no-logueado',
+    loadChildren: () => import('./no-logueado/no-logueado.module').then( m => m.NoLogueadoPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'configuracion',
+    loadChildren: () => import('./configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+  },
+
+
+
+
+
 ];
 
 @NgModule({

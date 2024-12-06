@@ -82,17 +82,30 @@
 
 <ion-footer>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
+    <!-- Redirige a la página Home -->
+    <ion-tab-button tab="cursos-vista" routerLink="/cursos-vista">
+      <ion-icon name="school-sharp"></ion-icon>
+      <ion-label>Cursos</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="search">
-      <ion-icon name="search-outline"></ion-icon>
+    <!-- Redirige a la página Search -->
+    <ion-tab-button tab="search" href="/planes-suscripcion">
+      <ion-icon name="search-sharp"></ion-icon>
+      <ion-label>Buscar</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="favorites">
-      <ion-icon name="heart-outline"></ion-icon>
+
+    <!-- Redirige a la página Favorites -->
+    <ion-tab-button tab="favorites" routerLink="/carrito-compras">
+      <ion-icon name="cart-sharp"></ion-icon>
+      <ion-label>Carrito</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="profile">
-      <ion-icon name="person-outline"></ion-icon>
+
+
+
+    <!-- Redirige a la página Profile -->
+    <ion-tab-button tab="profile" href="/login">
+      <ion-icon name="person-sharp"></ion-icon>
+      <ion-label>Perfil</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-footer>
+

@@ -26,8 +26,32 @@
         Precio por persona: S/. {{ getPrice(plan) | number: '1.2-2' }}
       </p>
 
+      <ion-button
+    class="add-to-cart-button"
+    expand="block"
+    (click)="addToCart()">
+    Agregar al carrito
+  </ion-button>
+
+
       <!-- Botón para suscribirse -->
-      <ion-button class="subscribe-button"  expand="block" (click)="goToPayment()">Suscribirse</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-sharp"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search-sharp"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="favorites">
+      <ion-icon name="cart-sharp"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-sharp"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
