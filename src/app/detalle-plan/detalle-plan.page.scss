@@ -1,0 +1,79 @@
+.descripcion {
+  font-size: 1rem;
+  color: rgb(161, 160, 160);
+}
+
+.precio-oferta {
+  font-size: 1.2rem;
+  color: #ff5722;
+  font-weight: bold;
+}
+
+ion-card-content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+
+}
+
+ion-card-content ul li {
+  margin: 5px 0;
+}
+
+ion-content {
+  --background: url('../../assets/imgs/fondo-planes-suscripcion.jpg') no-repeat center center/cover;
+
+
+}
+
+ion-card {
+  --background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.plan-card {
+  --background: #ffffff
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+.plan-description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.plan-price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #06b4ff;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+
+
+.subscribe-button {
+  --background: #007bff;
+  --background-hover: #0056b3;
+  --color: #fff;
+  font-size: 1rem;
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  border: none;
+  box-shadow: none;
+}

@@ -1,0 +1,203 @@
+.perfil-page {
+  --ion-background-color: #0a0a0a; /* Fondo negro profundo */
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  padding-top: var(--ion-safe-area-top);
+
+  /* Encabezado */
+  .perfil-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #1a1a1a; /* Gris oscuro */
+
+    .perfil-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00bcd4; /* Azul turquesa */
+    }
+
+    .perfil-icon {
+      font-size: 1.5rem;
+      color: #00bcd4; /* Azul turquesa */
+    }
+  }
+
+  /* Información del perfil */
+  .perfil-info {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+
+    .perfil-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 12px;
+      border: 2px solid #00bcd4; /* Azul turquesa */
+    }
+
+    .perfil-details {
+      h2 {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #00e676; /* Verde llamativo */
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #bdbdbd; /* Gris claro */
+      }
+    }
+  }
+
+  /* Secciones */
+  .section {
+    padding: 16px;
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #00e676; /* Verde llamativo */
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 0.9rem;
+      color: #bdbdbd; /* Gris claro */
+    }
+  }
+
+  /* Botones */
+  .primary-button {
+    --background: #00bcd4; /* Azul turquesa */
+    --color: #ffffff; /* Blanco */
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .secondary-button {
+    --background: #424242; /* Gris oscuro */
+    --color: #ffffff; /* Blanco */
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* Footer */
+  .footer-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    background: #1a1a1a; /* Gris oscuro */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    ion-icon {
+      font-size: 1.5rem;
+      color: #bdbdbd; /* Gris claro */
+    }
+
+    ion-tab-button[aria-selected="true"] ion-icon {
+      color: #00bcd4; /* Azul turquesa para ícono activo */
+    }
+  }
+}
+
+/* Responsividad */
+
+/* Pantallas pequeñas */
+@media (max-width: 576px) {
+  .perfil-header {
+    padding: 12px;
+
+    .perfil-title {
+      font-size: 1.2rem;
+    }
+
+    .perfil-icon {
+      font-size: 1.2rem;
+    }
+  }
+
+  .perfil-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .perfil-image {
+      margin-bottom: 12px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .perfil-details {
+      h2 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Pantallas medianas */
+@media (min-width: 577px) and (max-width: 1024px) {
+  .perfil-info {
+    flex-direction: row;
+
+    .perfil-image {
+      width: 70px;
+      height: 70px;
+    }
+
+    .perfil-details {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1025px) {
+  .perfil-info {
+    padding: 24px;
+
+    .perfil-image {
+      width: 80px;
+      height: 80px;
+    }
+
+    .perfil-details {
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

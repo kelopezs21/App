@@ -1,0 +1,111 @@
+
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <img src="./assets/imgs/logo-curso.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+      <span style="font-size: 20px; vertical-align: middle;">GuimarBot</span>
+    </ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar placeholder="¿Qué quieres aprender hoy?"></ion-searchbar>
+
+
+  <div class="categories">
+    <ion-button style="--background: #38b6ff; --color: white;">
+      <ion-icon name="logo-html5"></ion-icon>
+      <ion-label>Desarrollo web</ion-label>
+    </ion-button>
+
+    <ion-button style="--background: #004aad; --color: white;">
+      <ion-icon name="shield-checkmark"></ion-icon>
+      <ion-label>Ciberseguridad</ion-label>
+    </ion-button>
+
+    <ion-button style="--background: #004aad; --color: white;">
+      <ion-icon name="analytics-sharp"></ion-icon>
+      <ion-label>Base de datos</ion-label>
+    </ion-button>
+
+    <ion-button style="--background: #004aad; --color: white;">
+      <ion-icon slot="start" name="laptop-outline"></ion-icon>
+      <ion-label>Programación y software</ion-label>
+    </ion-button>
+
+    <ion-button style="--background: #004aad; --color: white;">
+      <ion-icon name="code-slash-sharp"></ion-icon>
+      <ion-label>Fundamentos de programación</ion-label>
+    </ion-button>
+  </div>
+
+
+
+  <div class="recommended">
+    <h2>Cursos recomendados para ti</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card routerLink="/curso-detalle/1">
+            <ion-img src="./assets/imgs/img1-curso.png" height="200px" width="300px"></ion-img>
+            <ion-card-content>
+              <ion-chip color="warning">BASIC</ion-chip>
+              <h3>Curso de Fundamentos de Programación</h3>
+              <p>4.8 ★ AUTOR</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-card routerLink="/curso-detalle/2">
+            <ion-img src="./assets/imgs/img2-curso.png" height="200px" width="300px"></ion-img>
+            <ion-card-content>
+              <ion-chip color="danger">EXPERT</ion-chip>
+              <h3>Curso de Novato a Experto en HTML</h3>
+              <p>Bloqueado - Suscríbete para desbloquear</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="cursos-vista" routerLink="/cursos-vista">
+      <ion-icon name="school-sharp"></ion-icon>
+      <ion-label>Cursos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="search" href="/planes-suscripcion">
+      <ion-icon name="search-sharp"></ion-icon>
+      <ion-label>Buscar</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="favorites" routerLink="/carrito-compras">
+      <ion-icon name="cart-sharp"></ion-icon>
+      <ion-label>Carrito</ion-label>
+    </ion-tab-button>
+
+
+
+
+    <ion-tab-button tab="profile" href="/login">
+      <ion-icon name="person-sharp"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
+

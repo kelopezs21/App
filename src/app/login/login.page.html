@@ -1,0 +1,83 @@
+<ion-content [fullscreen]="true">
+  <div class="video-background">
+    <video autoplay loop muted>
+      <source src="assets/videos/login.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+
+  <ion-grid>
+    <!-- Aquí van los contenidos de tu grid -->
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row>
+    <!-- Botón flotante -->
+    <ion-fab vertical="top" horizontal="end">
+      <ion-fab-button (click)="signIn()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <!-- Formulario -->
+    <ion-list lines="full">
+      <ion-list-header class="ion-margin">
+        <ion-label>Ingresar</ion-label>
+      </ion-list-header>
+
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="form">
+          <!-- Número de Celular -->
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input
+                formControlName="celular"
+                placeholder="Número de Celular"
+                type="tel"
+                minlength="9"
+                maxlength="9">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('celular')?.valid && form.get('celular')?.touched">
+              <ion-text class="error" *ngIf="form.get('celular')?.hasError('required')">
+                * Por favor, ingresa el Número de Celular
+              </ion-text>
+            </ion-text>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-icon
+                [name]="type ? 'eye-outline' : 'eye-off-outline'"
+                slot="end"
+                (click)="changeType()">
+              </ion-icon>
+              <ion-input
+                formControlName="contraseña"
+                placeholder="Contraseña"
+                [type]="type ? 'password' : 'text'">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('contraseña')?.valid && form.get('contraseña')?.touched">
+              <ion-text class="error" *ngIf="form.get('contraseña')?.hasError('required')">
+                * Por favor, ingresa la Contraseña
+              </ion-text>
+            </ion-text>
+          </div>
+        </form>
+
+        <!-- Opciones adicionales -->
+        <ion-item lines="none" class="ion-padding-top">
+          <ion-text color="dark" slot="start" (click)="forgotPassword()">
+            ¿Olvidaste la contraseña?
+          </ion-text>
+          <ion-text style="color: #ff4d4d; font-weight: bold;" slot="end" routerLink="/login/crear-cuenta">
+            <strong>Registrarse</strong>
+          </ion-text>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+</ion-footer>

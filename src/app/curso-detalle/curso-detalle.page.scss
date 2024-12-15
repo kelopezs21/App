@@ -1,0 +1,24 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.course-info {
+  text-align: center;
+
+  h2 {
+    color: #004aad;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}

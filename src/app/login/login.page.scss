@@ -1,0 +1,174 @@
+
+
+  ion-grid{
+    transform:translateY(10vh);
+    ion-label, p{
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+    }
+  }
+
+
+
+ion-footer {
+  ion-row {
+      padding-top: 5vh;
+      background: transparent;
+      display: block;
+      ion-fab-button {
+          margin-right: 2.5vh;
+      }
+      ion-list {
+          border-radius: 30px 30px 0 0;
+          ion-list-header {
+              ion-label {
+                  font-weight: bold;
+                  font-size: 1.8em;
+
+              }
+          }
+          ion-input, ion-text {
+              font-size: 0.9em;
+          }
+
+      .error {
+          font-size: 0.75em !important;
+      }
+      }
+  }
+}
+.modificar-letra1 {
+  text-align: center; // Centrar el texto
+  font-size: 10px; // Cambiar el tamaño del texto
+  font-family: 'Rowdies', cursive;
+  position: fixed;
+}
+
+
+
+ion-fab-button {
+  --background: #004aad; /* Color azul */
+  --color: #ffffff;      /* Color blanco para el ícono */
+}
+
+ion-footer ion-row {
+  ion-list {
+    background: #004aad; /* Fondo de los inputs y botones */
+    color: #ffffff;      /* Color de texto */
+    border-radius: 30px 30px 0 0;
+  }
+}
+
+/* Fondo transparente para los inputs */
+ion-item {
+  --background: transparent !important; /* Fondo transparente */
+  --color: #ffffff; /* Texto blanco */
+  border-bottom: 1px solid #ffffff; /* Línea blanca debajo */
+}
+
+/* Ajustar los inputs dentro de ion-item */
+ion-input {
+  --color: #ffffff !important; /* Texto de los inputs en blanco */
+  --placeholder-color: #d9d9d9; /* Color de los placeholders (gris claro) */
+}
+
+/* Color del ícono del ojo */
+ion-icon {
+  color: #ffffff; /* Ícono en blanco */
+}
+
+.button-inner {
+  color: #000000 !important; /* Texto de color negro */
+}
+
+
+
+/* Estilización general del botón */
+.button-native {
+  background-color: #004aad; /* Fondo azul */
+  color: #ffffff; /* Texto blanco */
+  border: 2px solid #004aad; /* Borde azul */
+  border-radius: 30px; /* Bordes redondeados */
+  font-weight: bold; /* Texto más visible */
+  font-size: 1rem; /* Tamaño del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  transition: all 0.3s ease; /* Transición suave */
+  display: flex; /* Alinear contenido horizontal */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre ícono y texto */
+  cursor: pointer; /* Indicador de clic */
+}
+
+/* Efecto hover */
+.button-native:hover {
+  background-color: #003580; /* Azul más oscuro al pasar el cursor */
+  border-color: #003580; /* Borde también más oscuro */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Ícono dentro del botón */
+.button-native ion-icon {
+  color: #ffffff; /* Ícono blanco */
+  background-color: #002766; /* Fondo más oscuro para destacar */
+  border: 2px solid #002766; /* Borde azul más oscuro */
+  border-radius: 50%; /* Hacerlo circular */
+  padding: 5px; /* Espaciado interno */
+  font-size: 1.2rem; /* Tamaño del ícono */
+}
+
+/* Efecto hover en el ícono */
+.button-native:hover ion-icon {
+  background-color: #001b44; /* Oscurecer aún más */
+  border-color: #001b44;
+}
+
+/* Texto dentro del botón */
+.button-inner {
+  color: #ffffff; /* Asegura que el texto sea blanco */
+  font-family: 'Arial', sans-serif; /* Fuente limpia */
+}
+
+/* Estilizar "¿Olvidaste tu contraseña?" y "Registrarse" */
+ion-text.olv-contra,
+ion-text.registrarse {
+  color: #000000 !important; /* Color negro */
+  font-weight: bold; /* Texto más visible */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 0.9rem; /* Tamaño ajustado */
+  transition: color 0.3s ease; /* Efecto suave */
+}
+
+/* Efecto hover */
+ion-text.olv-contra:hover,
+ion-text.registrarse:hover {
+  color: #004aad !important; /* Azul al pasar el cursor */
+  cursor: pointer; /* Mostrar que es clickeable */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Esto asegura que el video esté detrás del contenido */
+}
+
+video {
+  object-fit: cover; /* Hace que el video cubra toda el área disponible */
+  width: 100%;
+  height: 100%;
+}
+
+ion-fab-button {
+  --background: #ff4d4d;; /* Cambia el color de fondo del círculo */
+     /* Cambia el color del ícono si lo necesitas */
+}
+
+
+.error {
+  font-size: 12px;
+  color: #ff4d4d;      /* Espacio entre el input y la alerta */
+}

@@ -1,0 +1,151 @@
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/login" color="white"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-row>
+    <ion-fab vertical="top" horizontal="end">
+      <ion-fab-button color="danger" (click)="signUp()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-list lines="full" class="form-container"> <!-- Aquí agregas la clase 'form-container' -->
+      <ion-list-header class="ion-margin">
+        <ion-label>Regístrate</ion-label>
+      </ion-list-header>
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="form">
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input
+                formControlName="name"
+                placeholder="Nombre"
+                type="text">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('name')?.valid && form.get('name')?.touched">
+              <ion-text class="error"
+                *ngIf="form.get('name')?.hasError('required')"
+                color="danger">
+                * Por favor , Ingrese su nombre
+              </ion-text>
+            </ion-text>
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input
+                formControlName="birthdate"
+                type="date">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('birthdate')?.valid && form.get('birthdate')?.touched">
+              <ion-text class="error" *ngIf="form.get('birthdate')?.hasError('required')" color="danger">
+                * Por favor, introduzca su fecha de nacimiento
+              </ion-text>
+            </ion-text>
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-button
+                *ngIf="!verified"
+                slot="end"
+                fill="clear"
+                color="primary"
+                (click)="verifyViaOtp()">VERIFICAR
+              </ion-button>
+              <ion-button
+                *ngIf="verified"
+                slot="end"
+                fill="clear"
+                color="success">VERIFICADO
+              </ion-button>
+              <ion-input
+                formControlName="phone"
+                placeholder="Número de Teléfono"
+                type="tel"
+                minlength="9"
+                maxlength="9"
+                (ionChange)="changeNumber($event)">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('phone')?.valid && form.get('phone')?.touched">
+              <ion-text class="error" *ngIf="form.get('phone')?.hasError('required')" color="danger">
+                * Por favor, introduzca su número de teléfono
+              </ion-text>
+              <ion-text class="error" *ngIf="form.get('phone')?.hasError('minlength')
+                && !form.get('phone')?.hasError('required')" color="danger">
+                * Introduzca un número de teléfono válido
+              </ion-text>
+            </ion-text>
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input
+                formControlName="email"
+                placeholder="Correo Electrónico"
+                type="email">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('email')?.valid && form.get('email')?.touched">
+              <ion-text class="error"
+                *ngIf="form.get('email')?.hasError('required')"
+                color="danger">
+                * Introduzca su dirección de correo electrónico
+              </ion-text>
+              <ion-text class="error" *ngIf="form.get('email')?.hasError('email')
+                && !form.get('email')?.hasError('required')" color="danger">
+                * Introduzca una dirección de correo electrónico correcta
+              </ion-text>
+            </ion-text>
+          </div>
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-icon
+                [name]="type ? 'eye-outline' : 'eye-off-outline'"
+                slot="end"
+                color="medium"
+                (click)="changeType()">
+              </ion-icon>
+              <ion-input
+                formControlName="password"
+                placeholder="Contraseña"
+                [type]="type ? 'password' : 'text'">
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('password')?.valid && form.get('password')?.touched">
+              <ion-text class="error" *ngIf="form.get('password')?.hasError('required')" color="danger">
+                * Por favor, introduzca la contraseña
+              </ion-text>
+              <ion-text class="error" *ngIf="form.get('password')?.hasError('minlength')
+                && !form.get('password')?.hasError('required')" color="danger">
+                * La contraseña debe tener un mínimo de 8 caracteres
+              </ion-text>
+            </ion-text>
+          </div>
+
+        </form>
+
+        <ion-item lines="none" class="ion-padding-top">
+          <ion-text color="danger" slot="start">
+            ¿Ya tienes una cuenta?
+          </ion-text>
+          <ion-text color="dark" slot="end"
+            routerLink="/login">
+            <strong>Iniciar Sesión</strong>
+          </ion-text>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles del Curso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="curso">
+
+    <div class="video-container">
+      <iframe [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="course-info ion-padding">
+      <h2>{{ curso.titulo }}</h2>
+      <p>{{ curso.descripcion }}</p>
+      <ion-chip color="primary">{{ curso.nivel }}</ion-chip>
+      <p>Duración: {{ curso.duracion }}</p>
+    </div>
+  </div>
+</ion-content>

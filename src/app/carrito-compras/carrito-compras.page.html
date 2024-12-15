@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Carrito de Compras</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Lista de productos en el carrito -->
+  <ion-list *ngIf="cartItems.length > 0; else noItems">
+    <ion-item *ngFor="let item of cartItems; let i = index">
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <p><strong>Precio: S/. {{ item.price | number: '1.2-2' }}</strong></p>
+      </ion-label>
+      <!-- Botón para eliminar el producto -->
+      <ion-button color="danger" (click)="removeItem(i)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Mensaje si no hay productos en el carrito -->
+  <ng-template #noItems>
+    <ion-item>
+      <ion-label>
+        <h2>No hay productos en el carrito</h2>
+      </ion-label>
+    </ion-item>
+  </ng-template>
+
+  <!-- Total del carrito -->
+  <ion-card *ngIf="cartItems.length > 0">
+    <ion-card-content>
+      <p><strong>Total: S/. {{ getTotal() | number: '1.2-2' }}</strong></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botones de pago -->
+  <ion-button expand="block" color="success" (click)="proceedToPayment()">
+    Proceder al Pago
+  </ion-button>
+
+  <!-- Google Pay Button -->
+  <div id="google-pay-button" style="margin-top: 20px;"></div>
+
+  <!-- PayPal Button -->
+  <div id="paypal-button-container" style="margin-top: 20px;"></div>
+
+  <!-- Yape: Enlace o QR -->
+  <div id="yape-button" style="margin-top: 20px;">
+    <p>Pago con Yape: <a href="yape://transfer?amount={{ getTotal() }}" target="_blank">Pagar con Yape</a></p>
+  </div>
+</ion-content>
